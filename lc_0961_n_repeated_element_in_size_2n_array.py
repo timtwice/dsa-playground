@@ -13,7 +13,7 @@ Initial solution.
 class Solution:
     def repeatedNTimes(self, nums: List[int]) -> int:
         n = len(nums) // 2
-        lookup = {}
+        lookup = {} // {number: occurrence}
 
         for _, num in enumerate(nums):
             if num in lookup:
