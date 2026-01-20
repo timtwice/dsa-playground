@@ -19,4 +19,21 @@ class Solution:
                 lookup.discard(num)
         
         return list(lookup)
+
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         
+        n = len(nums)
+        
+        for i in range(n):
+            num = abs(nums[i])
+            index = num - 1
+            if nums[index] > 0:
+                nums[index] = -nums[index]
+                
+        disappeared = []
+        for i in range(n):
+            if nums[i] > 0:
+                disappeared.append(i + 1)
+                
+        return disappeared
