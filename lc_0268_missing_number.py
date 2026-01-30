@@ -32,4 +32,18 @@ class Solution:
 
         return actual_sum - missing_sum
 
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+
+        n = len(nums)
+        missing = 0
+
+        for i in range(n + 1):
+            missing ^= i
+
+        for num in nums:
+            missing ^= num
+
+        return missing
+
              
