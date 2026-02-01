@@ -24,4 +24,18 @@ class Solution:
             seen.add(val)
         
         return True
+      
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+
+        seen = set()
+        counts = Counter(arr)
+
+        for val in counts.values():
+            if val in seen:
+                return False
+            seen.add(val)
+        
+        return True
         
