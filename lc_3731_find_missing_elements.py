@@ -22,4 +22,19 @@ class Solution:
         
         return missing
 
+
+class Solution:
+    def findMissingElements(self, nums: List[int]) -> List[int]:
+
+        if not nums:
+            return []
+
+        nums_set = set(nums)
+        missing = []
+        low, high = min(nums), max(nums)
+
+        for i in range(low, high):
+            if i not in nums_set:
+                missing.append(i)
         
+        return missing
