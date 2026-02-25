@@ -28,4 +28,21 @@ class Solution:
             return distinct[k - 1]
 
 
+class Solution:
+    def kthDistinct(self, arr: List[str], k: int) -> str:
+
+        frequency = {}
+
+        for s in arr:
+            frequency[s] = frequency.get(s, 0) + 1
+        
+        for s in arr:
+            if frequency[s] == 1:
+                k -= 1
+                if k == 0:
+                    return s
+        
+        return ""
+
+
         
