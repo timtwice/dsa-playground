@@ -27,4 +27,23 @@ class Solution:
         
         return max_vowel_count + max_consonant_count
 
+
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+
+        vowels = {'a', 'e', 'i', 'o', 'u'}
+
+        freq = {}
+        max_v = 0
+        max_c = 0
+
+        for ch in s:
+            freq[ch] = freq.get(ch, 0) + 1
+            if ch in vowels:
+                max_v = max(max_v, freq[ch])
+            else:
+                max_c = max(max_c, freq[ch])
+        
+        return max_v + max_c
+
         
