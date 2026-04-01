@@ -27,3 +27,7 @@ class Solution:
             if ch not in freq or freq[ch] == 0:
                 return ch
             freq[ch] -= 1
+
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        return list(Counter(t) - Counter(s))[0]
