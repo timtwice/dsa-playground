@@ -7,12 +7,13 @@ Topic: Array, Hash Table, Counting
 
 class Solution:
     def sumOfUnique(self, nums: List[int]) -> int:
-        count = Counter(nums)
+        freq = Counter(nums)
 
         unique_sum = 0
-        for num, count in count.items():
+        for num, count in freq.items():
             if count == 1:
                 unique_sum += num
         
         return unique_sum
+        
         
