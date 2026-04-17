@@ -42,3 +42,11 @@ class Solution:
                 total += count
         
         return total
+
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+
+        lookup = Counter(nums)
+        max_freq = max(lookup.values())
+
+        return sum(freq for freq in lookup.values() if freq == max_freq)
